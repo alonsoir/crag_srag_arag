@@ -27,6 +27,9 @@ neo4j = "^5.20.0"
 py2neo = "^2021.2.4"
 pinecone = "^4.0.0"
 pinecone-client = "^4.1.0"
+phidata = "^2.4.16"
+streamlit = "^1.35.0"
+openai = "^1.30.5"
 
 [build-system]
 requires = ["poetry-core"]
