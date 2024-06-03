@@ -5,7 +5,10 @@ __pycache__/
 
 # C extensions
 *.so
-
+*.json
+*.csv
+output.txt
+output_fibonacci.txt
 # Distribution / packaging
 .Python
 build/
