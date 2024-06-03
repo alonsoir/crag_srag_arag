@@ -12,35 +12,33 @@ from phi.tools.hackernews import HackerNews
 
 load_dotenv()
 
-openai_api_key = st.text_input("OpenAI api key: ", type="password", value=os.getenv("OPENAI_API_KEY"))
+openai_api_key = st.text_input(
+    "OpenAI api key: ", type="password", value=os.getenv("OPENAI_API_KEY")
+)
 
 st.title("Hacker News Assistant")
-st.caption("Ask Hacker News questions and get the answers. You can also ask for python code.")
+st.caption(
+    "Ask Hacker News questions and get the answers. You can also ask for python code."
+)
 
 if openai_api_key:
     # Create instances of the Assistant
     story_researcher = Assistant(
-            name="HackerNews Story Researcher",
-            role="Researches hackernews stories and users.",
-            tools=[HackerNews()],
-            llm=OpenAIChat(
-                model="gpt-4o",
-                max_tokens=1024,
-                temperature=0.5,
-                api_key=openai_api_key
-            )
+        name="HackerNews Story Researcher",
+        role="Researches hackernews stories and users.",
+        tools=[HackerNews()],
+        llm=OpenAIChat(
+            model="gpt-4o", max_tokens=1024, temperature=0.5, api_key=openai_api_key
+        ),
     )
 
     user_researcher = Assistant(
-            name="HackerNews User Researcher",
-            role="Reads articles from URLs.",
-            tools=[HackerNews()],
-            llm=OpenAIChat(
-                model="gpt-4o",
-                max_tokens=1024,
-                temperature=0.5,
-                api_key=openai_api_key
-            )
+        name="HackerNews User Researcher",
+        role="Reads articles from URLs.",
+        tools=[HackerNews()],
+        llm=OpenAIChat(
+            model="gpt-4o", max_tokens=1024, temperature=0.5, api_key=openai_api_key
+        ),
     )
 
     # Asistente de Desarrollo
@@ -49,25 +47,23 @@ if openai_api_key:
         role="Helps with coding and development tasks",
         tools=[HackerNews(), PythonREPLTool()],
         llm=OpenAIChat(
-            model="gpt-4o",
-            max_tokens=1024,
-            temperature=0.5,
-            api_key=openai_api_key
-        )
+            model="gpt-4o", max_tokens=1024, temperature=0.5, api_key=openai_api_key
+        ),
     )
 
-    myteam: Optional[List["Assistant"]] = [story_researcher, user_researcher, dev_assistant]
+    myteam: Optional[List["Assistant"]] = [
+        story_researcher,
+        user_researcher,
+        dev_assistant,
+    ]
 
     hn_assistant = Assistant(
-            name="Hackernews Team",
-            role="Researches hackernews stories and users.",
-            team=myteam,
-            llm=OpenAIChat(
-                model="gpt-4o",
-                max_tokens=1024,
-                temperature=0.5,
-                api_key=openai_api_key
-            )
+        name="Hackernews Team",
+        role="Researches hackernews stories and users.",
+        team=myteam,
+        llm=OpenAIChat(
+            model="gpt-4o", max_tokens=1024, temperature=0.5, api_key=openai_api_key
+        ),
     )
     query = st.text_input("Ask Hacker News")
 

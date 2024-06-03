@@ -22,6 +22,6 @@ gsearch = GoogleSearch(API_KEY_GOOGLE, SEARCH_ENGINE_ID)
 resultados = gsearch.search(query, pages=2)
 
 # Imprimir los resultados obtenidos de la búsqueda.
-print(json.dump(resultados,fp=open("resultados_dork_mysql_dump.json", "w"), indent=4))
+print(json.dump(resultados, fp=open("resultados_dork_mysql_dump.json", "w"), indent=4))
 
 print("file saved in results_dork_mysql_dump.json")

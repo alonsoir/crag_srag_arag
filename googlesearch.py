@@ -3,7 +3,7 @@ import requests
 
 class GoogleSearch:
     """Clase para realizar búsquedas usando la API personalizada de búsqueda de Google.
-    
+
     Esta clase permite a los usuarios ejecutar búsquedas en Google utilizando la API personalizada,
     manejando la paginación de resultados y permitiendo configurar el idioma de los resultados.
 
@@ -43,7 +43,9 @@ class GoogleSearch:
         final_results = []
         results_per_page = 10  # Google muestra 10 resultados por página
         for page in range(pages):
-            start_index = (start_page - 1) * results_per_page + 1 + (page * results_per_page)
+            start_index = (
+                (start_page - 1) * results_per_page + 1 + (page * results_per_page)
+            )
             url = f"https://www.googleapis.com/customsearch/v1?key={self.api_key}&cx={self.engine_id}&q={query}&start={start_index}&lr={lang}"
             response = requests.get(url)
 
@@ -53,7 +55,9 @@ class GoogleSearch:
                 cresults = self.custom_results(results)
                 final_results.extend(cresults)
             else:
-                error_msg = f"Error obtaining page {page + 1}: HTTP {response.status_code}"
+                error_msg = (
+                    f"Error obtaining page {page + 1}: HTTP {response.status_code}"
+                )
                 print(error_msg)
                 raise Exception(error_msg)
 
@@ -73,7 +77,7 @@ class GoogleSearch:
             cresult = {
                 "title": result.get("title"),
                 "description": result.get("snippet"),
-                "link": result.get("link")
+                "link": result.get("link"),
             }
             custom_results.append(cresult)
         return custom_results
