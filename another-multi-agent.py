@@ -1,14 +1,14 @@
 import os
 from typing import Optional, List
+
 import streamlit as st
 from dotenv import load_dotenv
 from langchain_experimental.tools import PythonREPLTool
 from phi.assistant import Assistant
 from phi.llm.openai import OpenAIChat
 from phi.tools.hackernews import HackerNews
+
 # Definir la herramienta PythonREPLTool
-from langchain_experimental.utilities.python import PythonREPL
-from langchain.tools import BaseTool
 
 load_dotenv()
 
@@ -74,8 +74,6 @@ if openai_api_key:
     if query:
         response = hn_assistant.run(query, stream=False)
         st.write(response)
-        # Add PythonREPLTool to the team
-        myteam.append(PythonREPLTool())
         # Run the PythonREPLTool with the query
         response = hn_assistant.run(query, stream=False, tools=[PythonREPLTool()])
         st.write(response)
