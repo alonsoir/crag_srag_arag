@@ -9,6 +9,8 @@ import sys
 """"
     This version has problems with parameters...
 """
+
+
 def env_config():
     """
     Solicita al usuario la API KEY de Google y el ID del buscador personalizado
@@ -45,7 +47,7 @@ def main(query, configure_env=None, start_page=1, pages=1, lang="lang_es"):
     resultados = gsearch.search(query, pages=2)
     output_filename = f"{query}-dump.json"
     # Imprimir los resultados obtenidos de la búsqueda.
-    #json.dump(resultados, fp=open(f"{output_filename}", "w"), indent=4)
+    # json.dump(resultados, fp=open(f"{output_filename}", "w"), indent=4)
     json.dump(resultados, fp=open("output.txt", "w"), indent=4)
 
     print(f"file saved in output-ninjadorks.txt")
@@ -62,7 +64,6 @@ if __name__ == "__main__":
         pages (int, optional): Número de páginas de resultados a retornar. Defaults to 1.
         lang (str, optional): Código de idioma para los resultados de búsqueda. Defaults to 'lang_es'.
     """
-
 
     parser = argparse.ArgumentParser(
         description="Herramienta para realizar búsquedas avanzadas en Google de forma automática."
