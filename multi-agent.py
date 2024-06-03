@@ -1,34 +1,14 @@
 import os
 from typing import Optional, List
+
 import streamlit as st
 from dotenv import load_dotenv
 from phi.assistant import Assistant
 from phi.llm.openai import OpenAIChat
 from phi.tools.hackernews import HackerNews
-
-# Definir la herramienta PythonREPLTool
-from langchain_experimental.utilities.python import PythonREPL
-from langchain.tools import BaseTool
 from phi.tools.python import PythonTools
 
 load_dotenv()
-
-
-class PythonREPLTool(BaseTool):
-    name: str = "Python REPL Tool"
-    description: str = "Executes Python code using the Python REPL utility."
-    verbose: bool = True  # Asumiendo que verbose es un atributo deseado
-
-    def _run(self, code: str) -> str:
-        repl = PythonREPL()
-        return repl.run(code)
-
-    def _run_tool(self, code: str) -> str:
-        return self._run(code)
-
-    def __call__(self, code: str) -> str:
-        return self._run_tool(code)
-
 
 openai_api_key = st.text_input(
     "OpenAI api key: ", type="password", value=os.getenv("OPENAI_API_KEY")
