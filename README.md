@@ -1,9 +1,10 @@
 
 # Advanced RAG control flow with LangGraph🦜🕸:
 
-Implementation of Reflective RAG, Self-RAG & Adaptive RAG tailored towards developers and production-oriented 
+### Implementation of Reflective RAG, Self-RAG & Adaptive RAG tailored towards developers and production-oriented 
 applications for learning LangGraph🦜🕸️, with Quix capability to ingest urls from a kafka topic using a consumer.
-Added a sample of a neo4j client to insert data into a neo4j database, local and remote.
+
+### Added a sample of a neo4j client to insert data into a neo4j database, local and remote.
 The remote neo4j interacts with Chat-GPT-4 model to generate a response to the user.
 
 This repository contains a refactored version of the original [LangChain's Cookbook](https://github.com/mistralai/cookbook/tree/main/third_party/langchain),
@@ -15,12 +16,24 @@ of [Sophia Young](https://x.com/sophiamyang) from Mistral & [Lance Martin](https
 ![Logo](https://github.com/emarco177/langgaph-course/blob/main/static/langgraph_adaptive_rag.png)
 
 Alonso Isidoro Román (@alonso_isidoro):
+
+### Added Quix support
+
 Added Quix capability to ingest urls from a kafka topic using a consumer. 
 Added Quix capability to insert urls to a kafka topic using a producer. 
 
 I simply read from a csv file to produce urls into the topic, just to simulate the real process.
 In real life, quix_producer should a web crawler looking for relevant data and publishing it to a kafka topic.
 
+### Added Google Dorks with Python
+Be sure to create a.env file with the following variables:
+
+SEARCH_ENGINE_ID=
+
+API_KEY_GOOGLE=
+  ```bash
+    poetry run python ninjadorks.py
+  ```
 ## Features
 
 - **Refactored Notebooks**: The original LangChain notebooks have been refactored to enhance readability, maintainability,
