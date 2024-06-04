@@ -3,6 +3,7 @@ import json
 from dotenv import load_dotenv
 import os
 from googlesearch import GoogleSearch
+import datetime
 
 # Cargar las variables de entorno desde el archivo .env para garantizar la seguridad y configurabilidad.
 load_dotenv()
@@ -21,7 +22,11 @@ gsearch = GoogleSearch(API_KEY_GOOGLE, SEARCH_ENGINE_ID)
 # Realizar la búsqueda con la consulta definida, especificando el número de páginas a recuperar.
 resultados = gsearch.search(query, pages=2)
 
-# Imprimir los resultados obtenidos de la búsqueda.
-print(json.dump(resultados, fp=open("resultados_dork_mysql_dump.json", "w"), indent=4))
+fecha_actual = datetime.date.today()
 
-print("file saved in results_dork_mysql_dump.json")
+# Crear el nombre del archivo con la fecha actual
+nombre_archivo = f"Archivo_{fecha_actual.strftime('%Y-%m-%d')}.json"
+# Imprimir los resultados obtenidos de la búsqueda.
+json.dump(resultados, fp=open(nombre_archivo, "w"), indent=4)
+
+print(f"file saved in {nombre_archivo}")

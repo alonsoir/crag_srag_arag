@@ -30,8 +30,6 @@ def main(query, configure_env=None, start_page=1, pages=1, lang="lang_es"):
         sys.exit(1)
     # Cargar las variables de entorno desde el archivo .env para garantizar la seguridad y configurabilidad.
     load_dotenv()
-    print(f"Dork: query")
-
     # Obtener las claves de configuración desde las variables de entorno.
     API_KEY_GOOGLE = os.getenv("API_KEY_GOOGLE")
     SEARCH_ENGINE_ID = os.getenv("SEARCH_ENGINE_ID")
@@ -39,17 +37,15 @@ def main(query, configure_env=None, start_page=1, pages=1, lang="lang_es"):
     # Definir la consulta de búsqueda que será usada para encontrar información específica en Google.
     # https://www.exploit-db.com/google-hacking-database
     # query = 'filetype:sql "MySQL dump" (pass|password|passwd|pwd)'
-    print(f"query is {query}")
+    #query.query = 'filetype:sql "MySQL dump" (pass|password|passwd|pwd)'
+    print(f"query is {query.query}")
     # Crear una instancia de GoogleSearch con la API y el ID del motor de búsqueda proporcionados.
     gsearch = GoogleSearch(API_KEY_GOOGLE, SEARCH_ENGINE_ID)
 
     # Realizar la búsqueda con la consulta definida, especificando el número de páginas a recuperar.
-    resultados = gsearch.search(query, pages=2)
-    output_filename = f"{query}-dump.json"
+    resultados = gsearch.search(query.query, pages=2)
     # Imprimir los resultados obtenidos de la búsqueda.
-    # json.dump(resultados, fp=open(f"{output_filename}", "w"), indent=4)
-    json.dump(resultados, fp=open("output.txt", "w"), indent=4)
-
+    json.dump(resultados, fp=open("output-ninjadorks.txt", "w"), indent=4)
     print(f"file saved in output-ninjadorks.txt")
 
 
@@ -72,7 +68,7 @@ if __name__ == "__main__":
         "-q",
         "--query",
         type=str,
-        help="Especifica el dork que deseas buscar. Ejemplo: -q \"filetype:sql 'MySQL dump' (pass|password|passwd|pwd)\"",
+        help="Especifica el dork que deseas buscar. Ejemplo: -q \"filetype:sql MySQL dump (pass|password|passwd|pwd)\"",
     )
     parser.add_argument(
         "-c",

@@ -1,0 +1,42 @@
+[
+    {
+        "title": "rnc_app/db/backup_rncdb.sql at master \u00b7 SIB-Colombia/rnc_app",
+        "description": "-- MySQL dump 10.13 Distrib 5.5.34, for Linux ... password` varchar(64) NOT NULL, `email` varchar ... Dump completed on 2014-06-17 14:46:22. 1. 2. 3. 4. 5. 6. 7. 8.",
+        "link": "https://github.com/SIB-Colombia/rnc_app/blob/master/db/backup_rncdb.sql"
+    },
+    {
+        "title": "bdCajeros.sql \u00b7 b4c1a7b8092d3a81bf3859cf623758b902c3eeb2 ...",
+        "description": "Feb 24, 2019 ... 2. USE `cajeros_automatico`;. 3. -- MySQL dump 10.13 Distrib 5.7.17, for Win64 (x86_64). 4. --. 5. -- Host: 127.0.0.1 Database:\u00a0...",
+        "link": "https://minka.gob.ec/6to_simulacion_cajeros/simulacion_cajeros/blob/b4c1a7b8092d3a81bf3859cf623758b902c3eeb2/bdCajeros.sql"
+    },
+    {
+        "title": "proethos2/symphony/proethos.sql at master \u00b7 bireme/proethos2 ...",
+        "description": "Blame. 1993 lines (1758 loc) \u00b7 613 KB. Raw. -- MySQL dump ... Password',1,0),(3619,'','es','senha','Contrase\u00f1a',1,0),(3620,'','fr','senha','Mot de pass\u00a0...",
+        "link": "https://github.com/bireme/proethos2/blob/master/symphony/proethos.sql"
+    },
+    {
+        "title": "http://www.iaes.edu.ve/iaespro/vigilancia/vigilanc...",
+        "description": "-- MySQL Administrator dump 1.4 ... password` varchar(45) NOT NULL default ... password`,`estatus`,`ci`,`nombre`,`apellido`,`nivel`) VALUES (1,'ADMIN','123\u00a0...",
+        "link": "http://www.iaes.edu.ve/iaespro/vigilancia/vigilancia.sql"
+    },
+    {
+        "title": "smid_stage_area.sql in intercambio/BD \u2013 Mapa Industrial ...",
+        "description": "Line. 1, -- MySQL dump 10.13 Distrib 5.5.31, for debian-linux-gnu (x86_64). 2, --. 3, -- Host: localhost Database: stage_area.",
+        "link": "https://mpv.cenditel.gob.ve/intercambio/browser/intercambio/BD/smid_stage_area.sql?rev=3d73865b3fbbd4a37d36e3ca93c50856af0f6449"
+    },
+    {
+        "title": "https://raw.githubusercontent.com/forestbiotech-la...",
+        "description": "-- MySQL dump 10.13 Distrib 8.0.16, for osx10.14 (x86_64) -- -- Host: localhost Database: brapi_dan\u00a0...",
+        "link": "https://raw.githubusercontent.com/forestbiotech-lab/PHENO/master/SQL/LATEST_dump.sql"
+    },
+    {
+        "title": "http://translations.openemr.io/languageTranslation...",
+        "description": "... Password issued for NewCrop eRx service.'), (130 ... MySQL executables.'), (4588, 'Full path to ... dump - not implemented for Windows server'), (10318, 'Sl\u00a0...",
+        "link": "http://translations.openemr.io/languageTranslations_utf8.sql"
+    },
+    {
+        "title": "https://raw.githubusercontent.com/openemr/openemr/...",
+        "description": "... password mechanisms where passwords are stored in ... MySQL executables.'), (2132, 'Full path to ... dump - not implemented for Windows server'), (4840\u00a0...",
+        "link": "https://raw.githubusercontent.com/openemr/openemr/aa42240771e37d41379d506e1e54d80f8e40533a/contrib/util/language_translations/currentLanguage_utf8.sql"
+    }
+]
