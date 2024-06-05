@@ -34,6 +34,19 @@ API_KEY_GOOGLE=
   ```bash
     poetry run python ninjadorks.py
   ```
+### Added gpt4all samples
+  ```bash
+    poetry run python gpt3all_sample.py
+    run next commands in another terminal:
+    brew install mitmproxy
+    mitmproxy --mode reverse:http://localhost:4891 --listen-host 127.0.0.1 --listen-port 8080
+    run next command in another terminal:
+    poetry run python gpt3all_sample_local_server.py
+  ```
+  First sample will download the model from the internet, the second sample will use the model from the local folder.
+  Download the model from the internet using gpt4all, in my case i downloaded Mistral-7B-Instruct-v0.1.Q4_0.GGUF and then
+  started the local server in port 4891. 8080 port is being used by mitmproxy.
+
 ## Features
 
 - **Refactored Notebooks**: The original LangChain notebooks have been refactored to enhance readability, maintainability,

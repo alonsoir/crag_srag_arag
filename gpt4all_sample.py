@@ -2,6 +2,7 @@ from pathlib import Path
 from gpt4all import GPT4All
 from gpt4all import Embed4All
 
+
 def stop_on_token_callback(token_id, token_string):
     # one sentence is enough:
     if "." in token_string:
@@ -83,26 +84,26 @@ response = model.generate(
 print(f"prompt is {prompt}")
 print(f"response is {response}")
 
-text = 'The quick brown fox jumps over the lazy dog'
+text = "The quick brown fox jumps over the lazy dog"
 embedder = Embed4All()
 output = embedder.embed(text)
 print(f"text is {text}")
 print(f"output is {output}")
 
-text = 'The quick brown fox jumps over the lazy dog'
+text = "The quick brown fox jumps over the lazy dog"
 # can be cpu or gpu. In my machine, gpu crashes
-embedder = Embed4All(device='cpu')
+embedder = Embed4All(device="cpu")
 output = embedder.embed(text)
 print(f"text is {text}")
 print(f"output is {output}")
 
-text = 'Who is Laurens van der Maaten?'
-embedder = Embed4All('nomic-embed-text-v1.f16.gguf')
-output = embedder.embed(text, prefix='search_query')
+text = "Who is Laurens van der Maaten?"
+embedder = Embed4All("nomic-embed-text-v1.f16.gguf")
+output = embedder.embed(text, prefix="search_query")
 print(f"text is {text}")
 print(f"output is {output}")
 
-text = 'The ' * 512 + 'The quick brown fox jumps over the lazy dog'
+text = "The " * 512 + "The quick brown fox jumps over the lazy dog"
 embedder = Embed4All()
 output = embedder.embed(text, long_text_mode="mean")
 print(f"text is {text}")
@@ -113,14 +114,14 @@ print(f"text is {text}")
 print(f"output is {output}")
 print(output)
 
-texts = ['The quick brown fox jumps over the lazy dog', 'Foo bar baz']
+texts = ["The quick brown fox jumps over the lazy dog", "Foo bar baz"]
 embedder = Embed4All()
 output = embedder.embed(texts)
 print(output[0])
 print()
 print(output[1])
 
-embedder = Embed4All(n_ctx=4096, device='cpu')
+embedder = Embed4All(n_ctx=4096, device="cpu")
 output = embedder.embed(texts)
 print(output[0])
 print()
