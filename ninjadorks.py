@@ -7,7 +7,7 @@ import argparse
 import sys
 
 """"
-    This version has problems with parameters...
+    I can use this script to search for a word in Google and get the first result.
 """
 
 
@@ -37,7 +37,7 @@ def main(query, configure_env=None, start_page=1, pages=1, lang="lang_es"):
     # Definir la consulta de búsqueda que será usada para encontrar información específica en Google.
     # https://www.exploit-db.com/google-hacking-database
     # query = 'filetype:sql "MySQL dump" (pass|password|passwd|pwd)'
-    #query.query = 'filetype:sql "MySQL dump" (pass|password|passwd|pwd)'
+    # query.query = 'filetype:sql "MySQL dump" (pass|password|passwd|pwd)'
     print(f"query is {query.query}")
     # Crear una instancia de GoogleSearch con la API y el ID del motor de búsqueda proporcionados.
     gsearch = GoogleSearch(API_KEY_GOOGLE, SEARCH_ENGINE_ID)
@@ -68,7 +68,7 @@ if __name__ == "__main__":
         "-q",
         "--query",
         type=str,
-        help="Especifica el dork que deseas buscar. Ejemplo: -q \"filetype:sql MySQL dump (pass|password|passwd|pwd)\"",
+        help='Especifica el dork que deseas buscar. Ejemplo: -q "filetype:sql MySQL dump (pass|password|passwd|pwd)"',
     )
     parser.add_argument(
         "-c",
