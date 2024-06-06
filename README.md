@@ -40,13 +40,37 @@ API_KEY_GOOGLE=
     run next commands in another terminal:
     brew install mitmproxy
     mitmproxy --mode reverse:http://localhost:4891 --listen-host 127.0.0.1 --listen-port 8080
-    run next command in another terminal:
+    echo "run next command in another terminal:"
     poetry run python gpt3all_sample_local_server.py
   ```
   First sample will download the model from the internet, the second sample will use the model from the local folder.
   Download the model from the internet using gpt4all, in my case i downloaded Mistral-7B-Instruct-v0.1.Q4_0.GGUF and then
   started the local server in port 4891. 8080 port is being used by mitmproxy.
 
+### Added NinjaDorks samples. Kudos to Santiago Hernandez for the original code. @santiagohramos
+  ```bash
+  cd dorks
+  poetry run python ninjadorks.py -q "filetype:sql MySQL dump (pass|password|passwd|pwd)" --download all --html resultados.html
+  poetry run python ninjadorks.py -gd "filetype:sql MySQL dump (pass|password|passwd|pwd)" --download all --html proposal-result.html 
+    Tratando de generar dorks con esta consulta: filetype:sql MySQL dump (pass|password|passwd|pwd)
+    ¿Quieres utilizar GPT-4 de OpenAI? (yes/no): yes
+    Utilizando OpenAI en remoto.
+    
+    Resultado:
+     Google Dork: filetype:sql "MySQL dump" "pass" | "password" | "passwd" | "pwd"
+     
+  poetry run python ninjadorks.py -gd "filetype:sql MySQL dump (pass|password|passwd|pwd)"  
+    Tratando de generar dorks con esta consulta: filetype:sql MySQL dump (pass|password|passwd|pwd)
+    ¿Quieres utilizar GPT-4 de OpenAI? (yes/no): no
+    Utilizando GPT4All y ejecutando la generación en local. Puede tardar varios minutos...
+    
+    Resultado:
+      Google Dork: filetype:sql "MySQL" after:2023-01-01
+    
+    Para crear un Google Dork específico, necesita conocer los operadores avanzados en motores de búsqueda disponibles 
+    y saber utilizarlos para encontrar información específica. Además, también necesita tener una gran memoria y 
+    conocimientos en programación avanzada para generar un Google Dork efectivo.
+  ```
 ## Features
 
 - **Refactored Notebooks**: The original LangChain notebooks have been refactored to enhance readability, maintainability,
