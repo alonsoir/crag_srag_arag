@@ -51,7 +51,7 @@ API_KEY_GOOGLE=
   ```bash
   cd dorks
   poetry run python ninjadorks.py -q "filetype:sql MySQL dump (pass|password|passwd|pwd)" --download all --html resultados.html
-  poetry run python ninjadorks.py -gd "filetype:sql MySQL dump (pass|password|passwd|pwd)" --download all --html proposal-result.html 
+  poetry run python ninjadorks.py -gd "filetype:sql MySQL dump (pass|password|passwd|pwd)" 
     Tratando de generar dorks con esta consulta: filetype:sql MySQL dump (pass|password|passwd|pwd)
     ¿Quieres utilizar GPT-4 de OpenAI? (yes/no): yes
     Utilizando OpenAI en remoto.
