@@ -1,4 +1,5 @@
 import os
+import random
 import sys
 import argparse
 from googlesearch import GoogleSearch
@@ -6,6 +7,26 @@ from results_parser import ResultsProcessor
 from file_downloader import FileDownloader
 from ia_agent import OpenAIGenerator, GPT4AllGenerator, IAagent
 from dotenv import load_dotenv, set_key
+
+import json
+import pprint
+
+def create_json_structure(file_path):
+    with open(file_path, 'r') as file:
+        content = file.read()
+        lines = content.split('\n')
+        json_structure = {}
+
+        for line in lines:
+            if line.startswith('#'):
+                category = line.strip('#').strip()
+                json_structure[category] = []
+            else:
+                if line:
+                    json_structure[category].append(line.strip())
+
+    return json.dumps(json_structure, indent=4)
+
 
 
 def env_config():
@@ -27,7 +48,51 @@ def openai_config():
     set_key(".env", "OPENAI_API_KEY", api_key)
     print("Archivo .env configurado satisfactoriamente.")
 
-def main(query, configure_env, start_page, pages, lang, output_json, output_html, download, gen_dork):
+
+def parse_txt_to_dict(file_path):
+    data_dict = {}
+    current_category = None
+
+    with open(file_path, 'r', encoding='utf-8') as file:
+        for line in file:
+            line = line.strip()
+            if not line:
+                continue  # Ignorar líneas vacías
+
+            if line.startswith('#'):
+                # Nueva categoría encontrada
+                current_category = line[1:].strip()
+                data_dict[current_category] = []
+            elif current_category:
+                # Añadir la línea a la categoría actual
+                data_dict[current_category].append(line)
+            else:
+                print("Error: Línea fuera de categoría")
+
+    return data_dict
+
+def show_dorks(file_path):
+    try:
+        # Abrir y leer el fichero JSON como una cadena
+        with open(file_path, 'r', encoding='utf-8') as file:
+            file_content = file.read()
+
+        # Convertir la cadena JSON a un diccionario
+        data = json.loads(file_content)
+
+        # Listar las claves del JSON
+        if isinstance(data, dict):
+            for key in data.keys():
+                print(key)
+        else:
+            print("El contenido del archivo JSON no es un diccionario.")
+
+    except FileNotFoundError:
+        print(f"Error: El fichero '{file_path}' no existe.")
+    except json.JSONDecodeError as e:
+        print(f"Error: El fichero '{file_path}' no contiene un JSON válido. {str(e)}")
+
+def main(query, configure_env, start_page, pages, lang, output_json, output_html, download, gen_dork,gen_dictionary,show_categories,show_dorks,random_dork):
     """
     Realiza una búsqueda en Google utilizando una API KEY y un SEARCH ENGINE ID almacenados en un archivo .env.
 
@@ -43,6 +108,7 @@ def main(query, configure_env, start_page, pages, lang, output_json, output_html
         gen_dork (str): Descripción para generar un dork automáticamente usando IA.
     """
     # Verificar la existencia del archivo .env y configuración del entorno
+    global data_dict
     if configure_env or not os.path.exists(".env"):
         env_config()
         sys.exit(1)
@@ -53,6 +119,34 @@ def main(query, configure_env, start_page, pages, lang, output_json, output_html
     # Extraer valores de las variables de entorno
     google_api_key = os.getenv("API_KEY_GOOGLE")
     search_engine_id = os.getenv("SEARCH_ENGINE_ID")
+
+    if gen_dictionary:
+        data_dict = parse_txt_to_dict(gen_dictionary)
+
+        print(f"created dork categories dictionary from {gen_dictionary}")
+
+    if show_categories:
+        print(f"Showing dork categories")
+        for key in data_dict.keys():
+            print(f"category: {key}")
+
+    if show_dorks:
+        data_dict = parse_txt_to_dict("some_dorks.txt")
+        print(f"Showing dorks.")
+        for key in data_dict.keys():
+            print(f"category: {key}")
+            for dork in data_dict[key]:
+                print(f"dork: {dork}")
+
+    if random_dork:
+        data_dict = parse_txt_to_dict("some_dorks.txt")
+
+        # Seleccionar una categoría al azar
+        category = random.choice(list(data_dict.keys()))
+
+        # Seleccionar un dork al azar de la categoría seleccionada
+        query = random.choice(data_dict[category])
+        print(f"Selected dork: {query} from category: {category}")
 
     # Si se solicita generar un dork utilizando inteligencia artificial
     if gen_dork:
@@ -129,6 +223,10 @@ if __name__ == "__main__":
     parser.add_argument("--html", type=str, default=None, help="Exporta los resultados en formato HTML en el fichero especificado.")
     parser.add_argument("--download", type=str, default=None, help="Especifica las extensiones de archivo a descargar.")
     parser.add_argument("-gd", "--generate-dork", type=str, default=None, help="Genera un dork automáticamente a partir de una descripción utilizando IA.")
+    parser.add_argument("--dictionary", type=str, default="some_dorks.txt", help="Exporta la estructura de dorks dado el fichero some_dorks.txt en un archivo JSON especificado.")
+    parser.add_argument("--show-categories", action="store_true", help="Muestra las categorías de los dorks.")
+    parser.add_argument("--show_dorks", action="store_true", help="Muestra los dorks almacenados.")
+    parser.add_argument("--random_dork", action="store_true", help="Selecciona un dork al azar.")
     args = parser.parse_args()
 
     main(query=args.query,
@@ -139,4 +237,8 @@ if __name__ == "__main__":
          output_json=args.json,
          output_html=args.html,
          download=args.download,
-         gen_dork=args.generate_dork)
+         gen_dork=args.generate_dork,
+         gen_dictionary=args.dictionary,
+         show_categories=args.show_categories,
+         show_dorks=args.show_dorks,
+         random_dork=args.random_dork)

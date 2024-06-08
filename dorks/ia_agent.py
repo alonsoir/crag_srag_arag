@@ -113,7 +113,12 @@ class IAagent:
             str: Mensaje completo para el generador.
         """
         return f"""
-        Genera un Google Dork específico basado en la descripción del usuario. Un Google Dork utiliza operadores avanzados en motores de búsqueda para encontrar información específica que es difícil de encontrar mediante una búsqueda normal. Tu tarea es convertir la descripción del usuario en un Google Dork preciso. A continuación, se presentan algunos ejemplos de cómo deberías formular los Google Dorks basándote en diferentes descripciones:
+        Genera un Google Dork específico basado en la descripción del usuario. 
+        Un Google Dork utiliza operadores avanzados en motores de búsqueda para encontrar información específica que es 
+        difícil de encontrar mediante una búsqueda normal. 
+        Tu tarea es convertir la descripción del usuario en un Google Dork preciso. 
+        A continuación, se presentan algunos ejemplos de cómo deberías formular los Google Dorks basándote en diferentes 
+        descripciones:
 
         Descripción: Documentos PDF relacionados con la seguridad informática publicados en el último año.
         Google Dork: filetype:pdf "seguridad informática" after:2023-01-01
