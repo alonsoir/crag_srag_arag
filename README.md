@@ -13,6 +13,8 @@ See Original YouTube video:[Advance RAG control flow with Mistral and LangChain]
 
 of [Sophia Young](https://x.com/sophiamyang) from Mistral & [Lance Martin](https://x.com/RLanceMartin) from LangChain
 
+Thank you @hack0Shiv for your dorks repository https://github.com/HackShiv/OneDorkForAll/tree/main
+
 ![Logo](https://github.com/emarco177/langgaph-course/blob/main/static/langgraph_adaptive_rag.png)
 
 Alonso Isidoro Román (@alonso_isidoro):
