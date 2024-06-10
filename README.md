@@ -70,7 +70,116 @@ API_KEY_GOOGLE=
     Para crear un Google Dork específico, necesita conocer los operadores avanzados en motores de búsqueda disponibles 
     y saber utilizarlos para encontrar información específica. Además, también necesita tener una gran memoria y 
     conocimientos en programación avanzada para generar un Google Dork efectivo.
-  ```
+    
+Now i can update the dorks dictionary from a git repo.
+
+(crag-srag-arag-py3.12) ┌<▪> ~/g/crag_srag_arag 
+└➤ poetry run python dorks/ninjadorks.py --random_dork --force_update
+created dork categories dictionary from some_dorks.txt
+Clonando el repositorio https://github.com/HackShiv/OneDorkForAll.git en repositorio_temp
+Cloning into 'repositorio_temp'...
+remote: Enumerating objects: 90, done.
+remote: Counting objects: 100% (90/90), done.
+remote: Compressing objects: 100% (88/88), done.
+remote: Total 90 (delta 52), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (90/90), 10.13 MiB | 1.87 MiB/s, done.
+Resolving deltas: 100% (52/52), done.
+There are 81 categories in the dictionary.
+Selected dork: Wifi Passwords: from category: All Shodan dork
+Buscando dorks con esta consulta: Wifi Passwords:
+┏━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ #  ┃ Titulo                                                              ┃ Descripcion                                                              ┃ Enlace                                                                    ┃
+┡━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ 1  │ How to view and change your WiFi network name and password ...      │ Xfinity app · Log in to the Xfinity app (download on the App Store or    │ https://es.xfinity.com/support/articles/view-change-wifi-password         │
+│    │                                                                     │ Google Play). · Select the WiFi tab. · Select WiFi details. · On the     │                                                                           │
+│    │                                                                     │ pop-up, select Edit ...                                                  │                                                                           │
+│    │                                                                     │                                                                          │                                                                           │
+│ 2  │ Find or Change Your WiFi Network Name & Password | Spectrum ...     │ Find or Change Your WiFi Network Name & Password · Sign in with your     │ https://www.spectrum.net/es/support/internet/finding-your-charter-wifi-n… │
+│    │                                                                     │ Spectrum username and password. · Select Services, then select Internet. │                                                                           │
+│    │                                                                     │ · Your WiFi info ...                                                     │                                                                           │
+│    │                                                                     │                                                                          │                                                                           │
+│ 3  │ Windows 10 keeps forgetting wi-fi credentials - Microsoft Community │ Jul 24, 2021 ... ... password and observe your device if its still       │ https://answers.microsoft.com/en-us/windows/forum/all/windows-10-keeps-f… │
+│    │                                                                     │ forget the wifi credentials. If issue persist, let's download the        │                                                                           │
+│    │                                                                     │ updated driver. What is the ...                                          │                                                                           │
+│    │                                                                     │                                                                          │                                                                           │
+│ 4  │ WiFi Passwords Map Instabridge - Aplicaciones en Google Play        │ Con millones de puntos de acceso WiFi seguros y actualizados,            │ https://play.google.com/store/apps/details?id=com.instabridge.android&hl… │
+│    │                                                                     │ Instabridge es la forma más sencilla de navegar de forma gratuita. El    │                                                                           │
+│    │                                                                     │ buscador sabe qué redes Wi- ...                                          │                                                                           │
+│    │                                                                     │                                                                          │                                                                           │
+│ 5  │ The Wifi Password in Spanish - Memrise lesson                       │ ¡espera! wait!; hang on! puedes. you can (singular informal). ir. to go. │ https://www.memrise.com/en-us/learn-spanish/spanish-course/1/basics/5568… │
+│    │                                                                     │                                                                          │                                                                           │
+│ 6  │ Quick Installation Guide                                            │ Enjoy! Both extended networks share the same Wi-Fi passwords as those of │ https://static.tp-link.com/res/down/doc/RE200(US)_V1_QIG.pdf              │
+│    │                                                                     │ your ... Fill in the WiFi Password of your Main Router/AP: Range         │                                                                           │
+│    │                                                                     │ Extender Network ...                                                     │                                                                           │
+│    │                                                                     │                                                                          │                                                                           │
+│ 7  │ Computer Login Guide - Updated                                      │ Note: Wi-Fi name (SSID) and Wi-Fi Password are located on the label      │ https://www.clevelandmetroschools.org/cms/lib/OH01915844/Centricity/Doma… │
+│    │                                                                     │ inside the back cover of the device. • From a Windows computer:          │                                                                           │
+│    │                                                                     │ Left-click Wireless ...                                                  │                                                                           │
+│    │                                                                     │                                                                          │                                                                           │
+│ 8  │ Locations San Salvador, San Salvador city, El Salvador - WiFi Space │ Download free WiFi passwords map ; Casa de Huéspedes El Rinconcito.      │ https://wifispc.com/locations/el-salvador/san-salvador/                   │
+│    │                                                                     │ Alameda Juan Pablo II, San Salvador, El Salvador ; Equipo Maiz. Pasaje   │                                                                           │
+│    │                                                                     │ Decapolis ; Zona Rosa.                                                   │                                                                           │
+│    │                                                                     │                                                                          │                                                                           │
+│ 9  │ How do i reset the Wifi-Password of the Black Hero 3 Plus Black ... │ Press the mode button until the "Reset Cam" option appears. Press the    │ https://community.gopro.com/s/question/0D53b000097NX1hCAG/how-do-i-reset… │
+│    │                                                                     │ shutter button to select "Reset Cam." Press the mode button until "Yes"  │                                                                           │
+│    │                                                                     │ appears. Press the ...                                                   │                                                                           │
+│    │                                                                     │                                                                          │                                                                           │
+│ 10 │ Change Your WiFi Name and Password                                  │ Changing your WiFi password. 1. On the Adapt screen, tap New Home        │ https://espanol.centurylink.com/home/help/internet/fiber/premium-wifi/ch… │
+│    │                                                                     │ Password under your current network info. 2. On the next screen, enter a │                                                                           │
+│    │                                                                     │ new WiFi password. 3.                                                    │                                                                           │
+│    │                                                                     │                                                                          │                                                                           │
+└────┴─────────────────────────────────────────────────────────────────────┴──────────────────────────────────────────────────────────────────────────┴───────────────────────────────────────────────────────────────────────────┘  ```
+
+(crag-srag-arag-py3.12) ┌<▸> ~/g/crag_srag_arag 
+└➤ poetry run python dorks/ninjadorks.py --random_dork 
+created dork categories dictionary from some_dorks.txt
+There are 81 categories in the dictionary.
+Selected dork: inurl:wp-content/plugins/ from category: WordPress
+Buscando dorks con esta consulta: inurl:wp-content/plugins/
+┏━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ #  ┃ Titulo                                                               ┃ Descripcion                                                              ┃ Enlace                                                                   ┃
+┡━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ 1  │ Index of /wp-content/plugins/jetpack/extensions/blocks/podcast ...   │ Index of                                                                 │ http://www.abae.gob.ve/wp-content/plugins/jetpack/extensions/blocks/pod… │
+│    │                                                                      │ /wp-content/plugins/jetpack/extensions/blocks/podcast-player/templates.  │                                                                          │
+│    │                                                                      │ [ICO], Name · Last modified · Size · Description. [PARENTDIR] ...        │                                                                          │
+│    │                                                                      │                                                                          │                                                                          │
+│ 2  │ Index of /wp-content/plugins/form-maker/images/demo                  │ Index of /wp-content/plugins/form-maker/images/demo. Name · Last         │ http://ofinase.go.cr/wp-content/plugins/form-maker/images/demo/          │
+│    │                                                                      │ modified · Size · Description · Parent Directory, -. 1.png, 2021-02-16   │                                                                          │
+│    │                                                                      │ 16:00, 1.3K.                                                             │                                                                          │
+│    │                                                                      │                                                                          │                                                                          │
+│ 3  │ Index of /wp-content/plugins/jetpack/jetpack_vendor/automattic ...   │ Name · Last modified · Size · Description. [PARENTDIR], Parent           │ http://www.abae.gob.ve/wp-content/plugins/jetpack/jetpack_vendor/automa… │
+│    │                                                                      │ Directory, -. [ ], class-boost-api.php, 2024-06-05 21:18, 2.6K.          │                                                                          │
+│    │                                                                      │                                                                          │                                                                          │
+│ 4  │ Index of /wp-content/plugins/elementskit/modules/parallax/assets/css │ Index of /wp-content/plugins/elementskit/modules/parallax/assets/css.    │ https://www.bancofarmaceutico.es/wp-content/plugins/elementskit/modules… │
+│    │                                                                      │ Icon Name Last modified Size Description. [PARENTDIR] Parent Directory - │                                                                          │
+│    │                                                                      │ [TXT] ...                                                                │                                                                          │
+│    │                                                                      │                                                                          │                                                                          │
+│ 5  │ Index of /wp-content/plugins/jetpack/jetpack_vendor/automattic ...   │ 5 days ago ... Index of                                                  │ http://www.abae.gob.ve/wp-content/plugins/jetpack/jetpack_vendor/automa… │
+│    │                                                                      │ /wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-videopres… │                                                                          │
+│    │                                                                      │ ...                                                                      │                                                                          │
+│    │                                                                      │                                                                          │                                                                          │
+│ 6  │ Index of /wp-content/plugins/elementskit/widgets/interactive-links   │ Index of /wp-content/plugins/elementskit/widgets/interactive-links. Name │ https://www.unaq.edu.mx/wp-content/plugins/elementskit/widgets/interact… │
+│    │                                                                      │ · Last modified · Size · Description · Parent Directory, -.              │                                                                          │
+│    │                                                                      │ interactive-links-ha.                                                    │                                                                          │
+│    │                                                                      │                                                                          │                                                                          │
+│ 7  │ Index of /wp-content/plugins/jetpack/jetpack_vendor/automattic ...   │ Name · Last modified · Size · Description. [PARENTDIR], Parent           │ http://www.abae.gob.ve/wp-content/plugins/jetpack/jetpack_vendor/automa… │
+│    │                                                                      │ Directory, -. [ ], class-checkout-flow.php, 2024-06-05 21:18, 5.5K. [ ], │                                                                          │
+│    │                                                                      │ class-my-account.php ...                                                 │                                                                          │
+│    │                                                                      │                                                                          │                                                                          │
+│ 8  │ Index of /wp-content/plugins/elementor/core/frontend/render-modes    │ 4 days ago ... Index of                                                  │ https://www.isaayahotelboutique.mx/wp-content/plugins/elementor/core/fr… │
+│    │                                                                      │ /wp-content/plugins/elementor/core/frontend/render-modes. Name · Last    │                                                                          │
+│    │                                                                      │ modified · Size · Description · Parent Directory, -.                     │                                                                          │
+│    │                                                                      │                                                                          │                                                                          │
+│ 9  │ Index of /portalnv/wp-content/plugins/wp-miniaudioplayer/js          │ Name · Last modified · Size · Description. [PARENTDIR], Parent           │ https://www.munimacul.cl/portalnv/wp-content/plugins/wp-miniaudioplayer… │
+│    │                                                                      │ Directory, -. [ ], id3.min.js, 2023-09-28 11:00, 16K. [ ],               │                                                                          │
+│    │                                                                      │ jquery.jplayer.swf, 2023-09-28 11: ...                                   │                                                                          │
+│    │                                                                      │                                                                          │                                                                          │
+│ 10 │ Index of /wp-content/plugins/elementor/assets/lib/font-awesome/fonts │ Name · Last modified · Size · Description · Parent Directory, -.         │ https://www.isaayahotelboutique.mx/wp-content/plugins/elementor/assets/… │
+│    │                                                                      │ FontAwesome.otf, 2024-06-06 12:53, 132K. fontawesome-webfont.eot,        │                                                                          │
+│    │                                                                      │ 2024-06-06 12:53, 162K.                                                  │                                                                          │
+│    │                                                                      │                                                                          │                                                                          │
+└────┴──────────────────────────────────────────────────────────────────────┴──────────────────────────────────────────────────────────────────────────┴──────────────────────────────────────────────────────────────────────────┘
+
 ## Features
 
 - **Refactored Notebooks**: The original LangChain notebooks have been refactored to enhance readability, maintainability,
